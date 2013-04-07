@@ -39,7 +39,8 @@ jQuery(document).ready(function() {
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 
-	var address = document.getElementById('address').value;
+	var address = "Universidade Estadual de Campinas";
+	
 	geocoder.geocode(
 	{
 		'address' : address
