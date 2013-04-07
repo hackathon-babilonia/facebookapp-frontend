@@ -5,8 +5,9 @@
 ***************************************************/
 
 
-
-jQuery(document).ready(function() {
+$(document).on("ready", function() {
+	
+	console.log("Ready");
 
 	//When page loads...
 	jQuery(".tab_content").hide(); //Hide all content
@@ -26,49 +27,35 @@ jQuery(document).ready(function() {
 	});
 	
 	//Load the Google Maps SDK
-	function initialize() 
-	{
-		var mapOptions = 
-		{
-			center : new google.maps.LatLng(-34.397, 150.644),
-			zoom : 8,
+	function loadMap() {
+		var latlng = new google.maps.LatLng(-22.817129,-47.070022);
+		var myOptions = {
+			zoom : 4,
+			center : latlng,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
 		};
-		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		var map = new google.maps.Map(document
+				.getElementById("map"), myOptions);
+
+		var marker = new google.maps.Marker({
+			position : latlng,
+			map : map,
+			title : "Unicamp"
+		});
+
 	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-
-	var address = "Universidade Estadual de Campinas";
 	
-	geocoder.geocode(
-	{
-		'address' : address
-	},
-	function(results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			map
-					.setCenter(results[0].geometry.location);
-			var marker = new google.maps.Marker(
-					{
-						map : map,
-						position : results[0].geometry.location
-					});
-		} else {
-			alert('Geocode was not successful for the following reason: '+ status);
-		}
-	});
-	
-	//Load the Facebook SDK
+	// Load the Facebook SDK
 	window.fbAsyncInit = function()
     {
         // init the FB JS SDK
         FB.init(
         {
-            appId : '559299187448086', // App ID from the app dashboard
-            channelUrl : '//hackathon-babilonia.herokuapp.com/channel.php', // Channel file for x-domain comms
-            status : true, // Check Facebook Login status
-            xfbml : true // Look for social plugins on the page
+            appId 		: '559299187448086', // App ID from the app dashboard
+            channelUrl 	: '/channel.php', // Channel file for x-domain comms
+            status 		: true, // Check Facebook Login status
+            cookie     	: true, // enable cookies to allow the server to access the session
+            xfbml 		: true // Look for social plugins on the page
         });
 
         // Additional initialization code such as adding Event Listeners goes here
