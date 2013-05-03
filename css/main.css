@@ -1976,7 +1976,7 @@ blockquote p, .quote p
 
 /*--------------------Flexislider---------------------------*/
 
-#main-content
+.slider_wrapper
 {
 	position: relative;
 	z-index: 999;
@@ -1985,20 +1985,20 @@ blockquote p, .quote p
 	clear: both;
 }
 
-#main-content h2
+.slider_wrapper h2
 {
 	color: #ffffff;
 	margin-top: 0;
 }
 
-#main-content a, #main-content a:hover
+.slider_wrapper a, .slider_wrapper a:hover
 {
 	font-size: 18px;
 	text-decoration: underline;
 	color: #ffffff;
 }
 
-#main-content p
+.slider_wrapper p
 {
 	color: #ffffff;
 	font-size: 18px;
@@ -3063,7 +3063,7 @@ object, embed, video, iframe
 	font-weight: 500;
 	font-family: 'Open Sans', sans-serif;
 	border: none;
-	border-bottom: 3px solid #1A7763;
+	border-bottom: 3px solid #26ae90;
 	padding: 10px 30px 7px 46px;
 	background: url("../img/link.png") no-repeat scroll 19px 14px #26ae90;
 	transition: all .5s ease-in;
@@ -3211,12 +3211,12 @@ object, embed, video, iframe
 		-ms-interpolation-mode: bicubic;
 	}
 
-	.content_wrapper, #main-content, .breadcrumb
+	.content_wrapper, .slider_wrapper, .breadcrumb
 	{
 		width: 96%;
 	}
 
-	#main-content h2
+	.slider_wrapper h2
 	{
 		font-size: 40px;
 	}
@@ -3381,7 +3381,7 @@ object, embed, video, iframe
 @media only screen and (max-width: 640px)
 {
 
-	#main-content
+	.slider_wrapper
 	{
 		display: none;
 	}
