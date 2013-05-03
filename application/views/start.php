@@ -222,7 +222,7 @@
 
 				<!-- Start of contentleft -->
 				<div class="contentleft">
-					<p>
+					<p data-action="status-msg">
 						Cadastre-se agora para encontrar sua vaga.
 					</p>
 
@@ -233,8 +233,8 @@
 
 					<!-- Start of button green -->
 					<div class="button_green_image">
-						<a href="javascript:;" onclick="map.loadMap();$(this).hide();">Entrar com o Facebook</a>
-
+						<a href="javascript:;" data-action="fb-login">Entrar com o Facebook</a>
+						<img data-action="loading-img" src="/img/loading.gif" style="display: none">
 					</div><!-- End of button green -->
 
 				</div><!-- End of contentright -->
@@ -247,5 +247,6 @@
 		<div id="fb-root"></div>
 		<script type="text/javascript" src="js/facebook.js"></script>
 		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

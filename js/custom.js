@@ -51,7 +51,7 @@ $(document).on("ready", function() {
         // init the FB JS SDK
         FB.init(
         {
-            appId 		: '559299187448086', // App ID from the app dashboard
+            appId 		: '257313711081974', // App ID from the app dashboard
             channelUrl 	: '/channel.php', // Channel file for x-domain comms
             status 		: true, // Check Facebook Login status
             cookie     	: true, // enable cookies to allow the server to access the session

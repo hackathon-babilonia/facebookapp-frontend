@@ -502,7 +502,7 @@ ol li a
 {
 	width: 100%;
 	background-color: #4baad3;
-	min-height: 185px;
+	min-height: 640px;
 }
 
 .header_school:before
@@ -1028,6 +1028,11 @@ ol li a
 {
 	float: left;
 	padding-top: 14px;
+}
+
+#main-content
+{
+	margin-top: 10px;
 }
 
 .topsubmenu ul
