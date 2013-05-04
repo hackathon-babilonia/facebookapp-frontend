@@ -1,6 +1,6 @@
 var config = 
 {
-	backend: "http://172.16.99.143:8080/homin"
+	backend: "http://ec2-54-235-228-194.compute-1.amazonaws.com:8080/homin"
 };
 
 var user = 
@@ -48,24 +48,12 @@ var flow =
 						}
 					});
 					
-					// push info to backend
-					$.getJSON(config.backend + "/usuario/save", {access_token: user.access_token}, function(data)
-					{
-						if(data.result && data.result != "success")
-						{
-							alert("Erro ao fazer o login.");
-							document.location.reload();
-						}
-						else
-						{
-							// Prepare, initialize and load map
-							map.loadMap();
-							
-							// callback
-							if(typeof cb === "function")
-								cb();
-						}
-					});
+					// Prepare, initialize and load map
+					map.loadMap();
+					
+					// callback
+					if(typeof cb === "function")
+						cb();					
     			});
 			}
 		});
@@ -82,6 +70,10 @@ $("[data-action = 'fb-login']").click(function()
 	flow.login(function()
 	{
 		$("[data-action = 'status-msg']").html("Procurando vagas...");
+		$("[data-action = 'search-filters']").fadeIn("slow");
 		$("[data-action = 'loading']").hide();
 	});
 });
+
+
+// Search filters jQuery UI bindings

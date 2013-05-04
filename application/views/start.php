@@ -14,6 +14,7 @@
 		************************************************************************** -->
 
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<link href="css/filters.css" rel="stylesheet" type="text/css" />
 		<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
@@ -133,38 +134,6 @@
 								</li>
 
 								<li>
-									<a href="/vagas">Vagas</a>
-									<ul class="sub-menu">
-										<li>
-											<a href="">Apartamentos / CLITnets</a>
-										</li>
-
-										<li>
-											<a href="">Repúblicas</a>
-										</li>
-
-										<li>
-											<a href="">Pensionatos</a>
-										</li>
-									</ul>
-								</li>
-
-								<li>
-									<a href="">Universidades</a>
-									<ul class="sub-menu">
-										<li>
-											<a href="">UNICAMP</a>
-										</li>
-										<li>
-											<a href="">PUCCAMP</a>
-										</li>
-										<li>
-											<a href="">(XUPA) USP</a>
-										</li>
-									</ul>
-								</li>
-
-								<li>
 									<a href="">Publicar Vaga</a>
 								</li>
 
@@ -204,8 +173,48 @@
 						<br />
 						<img src="img/image_header.png" width="300px" alt="Image Header">
 					</div>
+					
+					<div id="search-filters" style="display: none" data-action="search-filters">
+						
+						<span class="filter-title">Onde deseja morar?</span>
+						
+						<div id="filter-row">
+							<span class="filter-row-title">Moradia</span>
+							<ul class="filter-button-group">
+								<li class="filter-button republica">República</li>
+								<li class="filter-button apto un">Apartamento</li>
+								<li class="filter-button pensao un">Pensão</li>
+							</ul>
+						</div>
+						
+						<div id="filter-row">
+							<span class="filter-row-title">Tipo</span>
+							<ul class="filter-button-group">
+								<li class="filter-button m un">Masculina</li>
+								<li class="filter-button mf">Mista</li>
+								<li class="filter-button f un">Feminina</li>
+							</ul>
+						</div>
+						
+						<div id="filter-row">
+							<span class="filter-row-title">Valor (R$)</span>
+							<input id="price-slider" name="price" />
+						</div>
+						
+						<div id="filter-row">
+							<span class="filter-row-title">Distância da Universidade</span>
+							<ul class="filter-button-group">
+								<li class="filter-button ape"></li>
+								<li class="filter-button bike un"></li>
+								<li class="filter-button car un"></li>
+							</ul>
+							<input id="distance-spinner" name="distance" />
+						</div>
+					
+					</div>
 
 					<div id="map" style="display: none"></div>
+					
 					<!-- Start of clear fix --><div class="clear"></div>
 
 				</section><!-- End of slider wrapper -->

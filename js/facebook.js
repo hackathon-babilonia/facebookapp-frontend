@@ -59,5 +59,20 @@ var facebook =
 					cb(r[0]["education"][0]["school"]["name"]);
 			}
 		});
+	},
+	recomendarVaga: function()
+	{
+		function sendRequestViaMultiFriendSelector()
+		{
+			FB.ui(
+			{
+				method : 'apprequests',
+				message : 'Recomende essa vaga!'
+			}, function(r)
+			{
+				console.log(r);
+			});
+		}
+
 	}
 }
