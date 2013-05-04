@@ -3182,6 +3182,20 @@ object, embed, video, iframe
 	padding-bottom: 25px;
 }
 
+.loading-img 
+{
+	float: left;
+	margin-top: 33px;
+	margin-right: 35px;
+	height: 100%;
+}
+
+.contentleft
+{
+	min-width: 450px;
+}
+
+
 /*  START OF MEDIA QUERIES */
 
 @media only screen and (max-width: 768px)
@@ -3286,7 +3300,7 @@ object, embed, video, iframe
 	{
 		padding: 15px 33px;
 	}
-
+	
 	#searchbox
 	{
 		width: 246px;

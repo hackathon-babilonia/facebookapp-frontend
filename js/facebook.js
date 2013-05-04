@@ -11,7 +11,7 @@ var facebook =
 				console.log("Successfully connected. Initializing map...");
 				
 				if(typeof cb === 'function')
-					cb(true);
+					cb(true, response.authResponse.access_token);
 			} 
 			else 
 			{
@@ -25,7 +25,7 @@ var facebook =
 			        	console.log("Successfully connected. Initializing map...");
 			        	
 			        	if(typeof cb === 'function')
-					cb(true);
+							cb(true, response.authResponse.access_token);
 			        } 
 			        else 
 			        {
@@ -34,7 +34,7 @@ var facebook =
 			        	document.loacation.reload();
 			        	
 			        	if(typeof cb === 'function')
-							cb(false);
+							cb(false, null);
 			        }
 			    });
 			}
@@ -56,7 +56,7 @@ var facebook =
 			else
 			{
 				if(typeof cb === 'function')
-					cb(r[0]["school"]["name"]);
+					cb(r[0]["education"][0]["school"]["name"]);
 			}
 		});
 	}

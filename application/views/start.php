@@ -15,6 +15,7 @@
 
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
 		<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
 		<!--[if IE 7 ]>    <html class= "ie7"> <![endif]-->
 		<!--[if IE 8 ]>    <html class= "ie8"> <![endif]-->
@@ -55,6 +56,7 @@
 
 		<!-- Custom APIS -->
 		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/hoverIntent.js"></script>
 		<script type="text/javascript" src="js/retina.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
@@ -222,6 +224,7 @@
 
 				<!-- Start of contentleft -->
 				<div class="contentleft">
+					<img class="loading-img" data-action="loading-img" src="/img/loading.gif" style="display: none">
 					<p data-action="status-msg">
 						Cadastre-se agora para encontrar sua vaga.
 					</p>
@@ -234,7 +237,6 @@
 					<!-- Start of button green -->
 					<div class="button_green_image">
 						<a href="javascript:;" data-action="fb-login">Entrar com o Facebook</a>
-						<img data-action="loading-img" src="/img/loading.gif" style="display: none">
 					</div><!-- End of button green -->
 
 				</div><!-- End of contentright -->
