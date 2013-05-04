@@ -2474,9 +2474,9 @@ input[type=submit]
 	font-weight: 500;
 	font-family: 'Open Sans', sans-serif;
 	border: none;
-	border-bottom: 3px solid #DD4A38;
+	border-bottom: 3px solid #019d5d;
 	padding: 10px 30px 7px 46px;
-	background: url("../img/mail.png") no-repeat scroll 19px 11px #FF675B;
+	background: url("../img/mail.png") no-repeat scroll 19px 11px #019d5d;
 	transition: all .5s ease-in;
 	-o-transition: all .5s ease-in;
 	-moz-transition: all .5s ease-in;
@@ -2494,9 +2494,9 @@ input[type=submit]:hover
 	font-weight: 500;
 	font-family: 'Open Sans', sans-serif;
 	border: none;
-	border-bottom: 3px solid #42484d;
+	border-bottom: 3px solid #898a8a;
 	padding: 10px 30px 7px 46px;
-	background: url("../img/mail.png") no-repeat scroll 19px 11px #42484d;
+	background: url("../img/mail.png") no-repeat scroll 19px 11px #898a8a;
 	text-transform: uppercase;
 }
 
@@ -3148,7 +3148,7 @@ object, embed, video, iframe
 #landing-title
 {
 	color: #FFF;
-	font-size: 48px;
+	font-size: 38px;
 	font-weight: 250;
 	font-family: 'Open Sans', sans-serif;
 	width: 100%;

@@ -1,6 +1,6 @@
 var server = 
 {
-	url: "http://ec2-54-235-228-194.compute-1.amazonaws.com:8080"
+	url: "//ec2-54-235-228-194.compute-1.amazonaws.com:8080"
 };
 
 var infowindowLevel = 0;
@@ -86,6 +86,13 @@ var flow =
 		{
 			$("#new-room").fadeIn("slow");
 		});
+	},
+	showFilterForm: function()
+	{
+		$("#new-room").fadeOut("slow", function()
+		{
+			$("[data-action = 'search-filters']").fadeIn("slow");
+		});
 	}
 };
 
@@ -94,13 +101,13 @@ $("[data-action = 'fb-login']").click(function()
 {
 	$("[data-action = 'fb-login']").hide();
 	$("[data-action = 'status-msg']").show();
-	$("[data-action = 'status-msg']").html("Conectando...");
+	$("[data-action = 'status-msg']").html("Connecting...");
 	$("[data-action = 'loading-img']").show();
 	
 	flow.login(function()
 	{
 		$(".topmenuwrapper").show();
-		$("[data-action = 'status-msg']").html("Procurando vagas...");
+		$("[data-action = 'status-msg']").html("Searching for rooms...");
 		$("[data-action = 'loading']").hide();
 	});
 });
@@ -109,6 +116,12 @@ $("[data-action='new-room']").click(function()
 {
 	flow.showCreateForm();
 });
+
+$("[data-action='filter-form']").click(function()
+{
+	flow.showFilterForm();
+});
+
 
 // Search filters jQuery UI bindings
 $(function()
@@ -127,6 +140,14 @@ $(function()
 
 	});
 	$("#price-amount").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
+	
+	var price_spinner = $( "#price-spinner" ).spinner
+	({
+		min: 0,
+		max: 2000,
+		step: 50,
+		numberFormat: "n"
+	}).spinner( "value", 500 );
 	
 	// ------ DISTANCE -----//
 	var distance_spinner = $( "#distance-spinner" ).spinner

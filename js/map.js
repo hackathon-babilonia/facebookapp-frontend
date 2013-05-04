@@ -136,7 +136,7 @@ var map =
 		
 		$("#map").fadeTo("slow", 0.5);
 		$("[data-action = 'status-msg']").show();
-		$("[data-action = 'status-msg']").html("Procurando vagas...");
+		$("[data-action = 'status-msg']").html("Searching for rooms...");
 		$("[data-action = 'loading-img']").show();
 	
 		map.clearMarkers();

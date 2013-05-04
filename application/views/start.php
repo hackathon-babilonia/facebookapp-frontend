@@ -37,7 +37,7 @@
 		</script>
 		<![endif]-->
 
-		<title>Homin' Universitario - Hackathon Babilônia</title>
+		<title>Homin' Universitario</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
@@ -133,19 +133,19 @@
 							<ul class="sf-menu">
 
 								<li>
-									<a href="javascript:void(0);">Início</a>
+									<a href="javascript:void(0);" data-action="filter-form">Get a Room</a>
 								</li>
 
 								<li>
-									<a href="javascript:void(0);" data-action="new-room">Publicar Vaga</a>
+									<a href="javascript:void(0);" data-action="new-room">Publish a Room</a>
 								</li>
 
 								<li>
-									<a href="javascript:void(0);">Minha Conta</a>
+									<a href="javascript:void(0);">Account</a>
 								</li>
 
 								<li>
-									<a href="http://facebook.com">Sair</a>
+									<a href="http://facebook.com">Logout</a>
 								</li>
 
 							</ul>
@@ -154,7 +154,7 @@
 
 						<!-- Start of header phone -->
 						<div class="header_school">
-							UNICAMP <a href="javascript:;" style="color: #badcea;; text-transform: none">(Trocar)</a>
+							UNICAMP <a href="javascript:;" style="color: #badcea;; text-transform: none">(Other)</a>
 						</div><!-- End of header phone -->
 
 						<!-- Clear Fix --><div class="clear"></div>
@@ -167,10 +167,10 @@
 
 					<div id="landing">
 						<div id="landing-title">
-							Lorem ipsum dolor sit amet
+							The best way to get a room!
 						</div>
 						<div id="landing-subtitle">
-							Donec luctus pretium metus, bibendum sodales tortor blandit sed.
+							Check were your friends are living and choose your own place!
 						</div>
 						<br />
 						<br />
@@ -179,41 +179,41 @@
 					
 					<div id="search-filters" style="display: none" data-action="search-filters">
 						
-						<span class="filter-title">Onde deseja morar?</span>
+						<span class="filter-title">Filter your search</span>
 						
 						<div class="filter-row">
-							<span class="filter-row-title">Moradia</span>
+							<span class="filter-row-title">Home Type</span>
 							<div class="filter-radio-group">
-							    <input type="radio" name="moradia" value="0" checked> República
-								<br><input type="radio" name="moradia" value="1"> Apartamento
-								<br><input type="radio" name="moradia" value="2"> Pensionato
+							    <input type="radio" name="moradia" value="0" checked> Fraternity
+								<br><input type="radio" name="moradia" value="1"> Flat
+								<br><input type="radio" name="moradia" value="2"> Boarding House
   							</div>
 						</div>
 						
 						<div class="filter-row">
-							<span class="filter-row-title">Tipo da vaga</span>
+							<span class="filter-row-title">Room Type</span>
 							<div class="filter-radio-group">
-							    <input type="radio" name="tipo" value="f"> Feminina
-								<br><input type="radio" name="tipo" value="mf"> Mista
-								<br><input type="radio" name="tipo" value="m" checked> Masculina
+							    <input type="radio" name="tipo" value="f"> Female
+								<br><input type="radio" name="tipo" value="mf"> Both
+								<br><input type="radio" name="tipo" value="m" checked> Male
   							</div>
 						</div>
 						
 						<div class="filter-row">
-							<span class="filter-row-title">Faixa de preço:</span> 
-							<span id="price-amount">R$300 - R$800</span>							
+							<span class="filter-row-title">Price Range:</span> 
+							<br /><span id="price-amount">R$300 - R$800</span>							
 							<div id="price-range"></div>
 						</div>
 						
 						<div class="filter-row" style="margin-top: 7px">
-							<span class="filter-row-title">Tempo (min)</span>
+							<span class="filter-row-title">Time (min)</span>
 							<div class="filter-radio-group" style="margin-bottom: 7px;">
-							    <input type="radio" name="distance" value="0"> A pé
+							    <input type="radio" name="distance" value="0"> By Foot
 								<br><input type="radio" name="distance" value="1"> Bike
-								<br><input type="radio" name="distance" value="2" checked> Carro
-								<br><input type="radio" name="distance" value="3"> Ônibus
+								<br><input type="radio" name="distance" value="2" checked> Car
+								<br><input type="radio" name="distance" value="3"> Bus
   							</div>
-  							<input id="distance-spinner" name="distance" /> minutos
+  							<input id="distance-spinner" name="distance" /> minutes
 						</div>
 					
 					</div>
@@ -222,67 +222,71 @@
 					
 						<span class="filter-title">New room</span>
 
-						<div class="form-row">
-							<span class="filter-row-title"></span>
-							</div>
-							<div id="form-cadastro">
-							<div class="filter-row">
-							<label>Name: </label>
+						<div class="filter-row">
+							<span class="filter-row-title">Name</span>
 							<input type="text" id="nome" style="width: 230px"/>
-							<br />
-							<label>Address: </label>
-							<input type="text" id="endereco" style="width: 230px"/>
-							<br />
-							<label>Number: </label>
-							<input type="text" id="numero" style="width: 230px"/>
-							<br />
-							<label>Neighborhood: </label>
-							<input id="bairro" style="width: 230px"/>
-							<br />
-							<br />
-							<label>City: </label>
-							<input id="cidade" style="width: 230px"/>
-							<br />
-							<label>State: </label>
-							<input id="estado" style="width: 230px"/>
-							<br />
 						</div>
-
+						
+						<div class="filter-row">
+							<span class="filter-row-title">Description</span>
+							<textarea id="desc" cols="10">
+							</textarea>
+						</div>
+						
+						<div class="filter-row">
+							<span class="filter-row-title">Address</span>
+							<input type="text" id="endereco" style="width: 230px"/>
+						</div>
+						
+						<div class="filter-row">
+							<span class="filter-row-title">Number</span>
+							<input type="text" id="numero" style="width: 230px"/>
+						</div>
+						
+						<div class="filter-row">
+							<span class="filter-row-title">Name</span>
+							<input type="text" id="nome" style="width: 230px"/>
+						</div>
+						
+						<div class="filter-row">
+							<span class="filter-row-title">Neighboorhood</span>
+							<input type="text" id="bairro" style="width: 230px"/>
+						</div>
+						
+						<div class="filter-row">
+							<span class="filter-row-title">City</span>
+							<br /><input type="text" id="nome" style="width: 150px;"/> - <input type="text" id="estado" style="width: 50px; text-transform: uppercase;" maxlength="2"/> 
+						</div>
+						
 						<div class="filter-row">
 							<span class="filter-row-title">Room Type</span>
-							<input type="radio" name="sexo" value="m" />
-							<label>Male: </label>
-							<br />
-							<input type="radio" name="sexo" value="f" />
-							<label>Female: </label>
-							<br />
-							<input type="radio" name="sexo" value="mf" />
-							<label>Both: </label>
-							<br />
-							<br />
+							<br /><input type="radio" name="sexo" value="m" /> Male
+							<br /><input type="radio" name="sexo" value="m" /> Both
+							<br /><input type="radio" name="sexo" value="m" /> Female
 						</div>
-
+						
 						<div class="filter-row">
 							<span class="filter-row-title">Home Type</span>
-							<input type="radio" name="tipo" value="0" />
-							<label>Fraternity: </label>
-							<br />
-							<input type="radio" name="tipo" value="1" />
-							<label>Boarding House: </label>
-							<br />
-							<input type="radio" name="tipo" value="2" />
-							<label>Flat: </label>
-							<br />
+							<br /><input type="radio" name="sexo" value="m" /> Fraternity
+							<br /><input type="radio" name="sexo" value="m" /> Boarding House
+							<br /><input type="radio" name="sexo" value="m" /> Flat
 						</div>
-						<input type="hidden" name="latitude" />
-						<input type="hidden" name="longitude" />
-
-						<input type="button" onclick="cadastrarVaga()">
+						
+						<div class="filter-row">
+							<span class="filter-row-title">Monthly Price</span>
+							<br /> R$ <input id="price-spinner" name="price" style="width: 100px"/> ,00 
+						</div>
+						
+						<input type="hidden" id="latitude" />
+						<input type="hidden" id="longitude" />
+						
+						<div class="filter-row" style="width: 100%; text-align: center">
+							<br /><br /><input type="submit" onclick="cadastrarVaga()" value="Create">
 						</div>
 
-						</div>
+					</div>
 
-						<div id="map" style="display: none"></div>
+					<div id="map" style="display: none"></div>
 
 					<!-- Start of clear fix --><div class="clear"></div>
 
@@ -304,7 +308,7 @@
 				<div class="contentleft">
 					<img class="loading-img" data-action="loading-img" src="/img/loading.gif" style="display: none">
 					<p data-action="status-msg">
-						Cadastre-se agora para encontrar sua vaga.
+						Sign up now to get your place!
 					</p>
 
 				</div><!-- End of contentleft -->
@@ -314,7 +318,7 @@
 
 					<!-- Start of button green -->
 					<div class="button_green_image">
-						<a href="javascript:;" data-action="fb-login">Entrar com o Facebook</a>
+						<a href="javascript:;" data-action="fb-login">Log in with Facebook</a>
 					</div><!-- End of button green -->
 
 				</div><!-- End of contentright -->
