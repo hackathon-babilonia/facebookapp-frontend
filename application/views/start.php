@@ -192,9 +192,9 @@
 						<div class="filter-row">
 							<span class="filter-row-title">Tipo da vaga</span>
 							<div class="filter-radio-group">
-							    <input type="radio" name="tipo" value="0"> Feminina
-								<br><input type="radio" name="tipo" value="1" checked> Mista
-								<br><input type="radio" name="tipo" value="2"> Masculina
+							    <input type="radio" name="tipo" value="f"> Feminina
+								<br><input type="radio" name="tipo" value="mf"> Mista
+								<br><input type="radio" name="tipo" value="m" checked> Masculina
   							</div>
 						</div>
 						
@@ -208,8 +208,8 @@
 							<span class="filter-row-title">Tempo (min)</span>
 							<div class="filter-radio-group" style="margin-bottom: 7px;">
 							    <input type="radio" name="distance" value="0"> A pé
-								<br><input type="radio" name="distance" value="1" checked> Bike
-								<br><input type="radio" name="distance" value="2"> Carro
+								<br><input type="radio" name="distance" value="1"> Bike
+								<br><input type="radio" name="distance" value="2" checked> Carro
 								<br><input type="radio" name="distance" value="3"> Ônibus
   							</div>
   							<input id="distance-spinner" name="distance" /> minutos

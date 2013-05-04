@@ -3,6 +3,7 @@ var server =
 	url: "http://ec2-54-235-228-194.compute-1.amazonaws.com:8080"
 };
 
+var infowindowLevel = 0;
 var user = 
 {
 	uid: null,
@@ -46,16 +47,35 @@ var flow =
 						{
 							user.edu = 0; // default: unicamp
 						}
+						
+						$.ajax(
+						{
+							url : server.url + "/usuario/save?callback=?",
+							data :
+							{
+								access_token: access_token,
+								edu: user.edu
+							},
+							dataType : "jsonp",
+							success: function(data)
+							{
+								if (data.result == "SUCCESS")
+								{
+									// Prepare, initialize and load map
+									map.loadMap();
+
+									// callback
+									if ( typeof cb === "function")
+										cb(true);
+								}
+								else
+								{
+									alert("Ooops, algo deu errado com o login. Atualize a página e tente de novo");
+									document.location.reload();
+								}
+							}
+						}); 
 					});
-					
-					// Perform login
-					
-					// Prepare, initialize and load map
-					map.loadMap();
-					
-					// callback
-					if(typeof cb === "function")
-						cb();					
     			});
 			}
 		});
@@ -66,6 +86,7 @@ var flow =
 $("[data-action = 'fb-login']").click(function()
 {
 	$("[data-action = 'fb-login']").hide();
+	$("[data-action = 'status-msg']").show();
 	$("[data-action = 'status-msg']").html("Conectando...");
 	$("[data-action = 'loading-img']").show();
 	
@@ -103,17 +124,16 @@ $(function()
 		max: 120,
 		step: 5,
 		numberFormat: "n"
-	}).spinner( "value", 15 );
+	}).spinner( "value", 120 );
 }); 
 
-
-
-
-
-
-
-
-
+// BIND SEARCH EVENTS
+$('input[name=distance]').click(function(){map.getMarkers();});
+$('input[name=moradia]').click(function(){map.getMarkers();});
+$('#price-range').on("slidechange", function(){map.getMarkers();});
+$('input[name=tipo]').click(function(){map.getMarkers();});
+$('#distance-spinner').on("spinchange", function(){map.getMarkers();});
+$('#distance-spinner').on("spin", function(){map.getMarkers();});
 
 
 

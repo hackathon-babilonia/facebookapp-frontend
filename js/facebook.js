@@ -11,7 +11,7 @@ var facebook =
 				console.log("Successfully connected. Initializing map...");
 				
 				if(typeof cb === 'function')
-					cb(true, response.authResponse.access_token);
+					cb(true, response.authResponse.accessToken);
 			} 
 			else 
 			{
@@ -25,7 +25,7 @@ var facebook =
 			        	console.log("Successfully connected. Initializing map...");
 			        	
 			        	if(typeof cb === 'function')
-							cb(true, response.authResponse.access_token);
+							cb(true, response.authResponse.accessToken);
 			        } 
 			        else 
 			        {
