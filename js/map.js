@@ -4,6 +4,9 @@ var map = {
 		//hide landing
 		$("#landing").fadeOut("slow", function()
 		{
+			//show filers menu
+			$("[data-action = 'search-filters']").fadeIn("slow");
+		
 			//load map
 			var latlng = new google.maps.LatLng(-22.817129,-47.070022);
 			var myOptions = {
@@ -17,16 +20,10 @@ var map = {
 			var marker = new google.maps.Marker({
 				position : latlng,
 				map : map,
-				title : "Unicamp"
-			});
-
-			var marker = new google.maps.Marker({
-			    position: latlng,
-			    map: map,
-			    title:"Universidade Estadual de Campinas (UNICAMP)"
+				title : "Unicamp",
+				icon : '/img/markers/university.png',
 			});
 	
-			
 			//show map
 			$("#map").fadeIn("fast");
 			

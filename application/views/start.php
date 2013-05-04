@@ -7,7 +7,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<!--Google Fonts-->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
 		<!-- *************************************************************************
 		**************************   STYLE SHEET   *******************************
@@ -16,7 +16,10 @@
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
 		<link href="css/filters.css" rel="stylesheet" type="text/css" />
 		<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+		<link href="css/cupertino/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+		<script src="js/jquery-1.9.1.js"></script>
+		
 
 		<!--[if IE 7 ]>    <html class= "ie7"> <![endif]-->
 		<!--[if IE 8 ]>    <html class= "ie8"> <![endif]-->
@@ -57,7 +60,6 @@
 
 		<!-- Custom APIS -->
 		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/hoverIntent.js"></script>
 		<script type="text/javascript" src="js/retina.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
@@ -117,12 +119,12 @@
 				<div id="top-content">
 					<!-- Start of logo -->
 					<div id="logo">
-						<a href="#"><img src="img/toplogo.png" width="213" height="33" alt="Business Essentials" /></a>
+						<a href="#"><img src="/img/logo_transp.png" height="100"  style="margin-botom: -10px; margin-left: 15px" alt="Homin Universitário" /></a>
 
 					</div><!-- End of logo -->
 
 					<!-- Start of top menu wrapper -->
-					<div class="topmenuwrapper">
+					<div class="topmenuwrapper" style="display: none;">
 
 						<!-- Start of topmenu -->
 						<nav class="topmenu">
@@ -178,37 +180,39 @@
 						
 						<span class="filter-title">Onde deseja morar?</span>
 						
-						<div id="filter-row">
+						<div class="filter-row">
 							<span class="filter-row-title">Moradia</span>
-							<ul class="filter-button-group">
-								<li class="filter-button republica">República</li>
-								<li class="filter-button apto un">Apartamento</li>
-								<li class="filter-button pensao un">Pensão</li>
-							</ul>
+							<div class="filter-radio-group">
+							    <input type="radio" name="moradia" value="0" checked> República
+								<br><input type="radio" name="moradia" value="1"> Apartamento
+								<br><input type="radio" name="moradia" value="2"> Pensionato
+  							</div>
 						</div>
 						
-						<div id="filter-row">
-							<span class="filter-row-title">Tipo</span>
-							<ul class="filter-button-group">
-								<li class="filter-button m un">Masculina</li>
-								<li class="filter-button mf">Mista</li>
-								<li class="filter-button f un">Feminina</li>
-							</ul>
+						<div class="filter-row">
+							<span class="filter-row-title">Tipo da vaga</span>
+							<div class="filter-radio-group">
+							    <input type="radio" name="tipo" value="0"> Feminina
+								<br><input type="radio" name="tipo" value="1" checked> Mista
+								<br><input type="radio" name="tipo" value="2"> Masculina
+  							</div>
 						</div>
 						
-						<div id="filter-row">
-							<span class="filter-row-title">Valor (R$)</span>
-							<input id="price-slider" name="price" />
+						<div class="filter-row">
+							<span class="filter-row-title">Faixa de preço:</span> 
+							<span id="price-amount">R$300 - R$800</span>							
+							<div id="price-range"></div>
 						</div>
 						
-						<div id="filter-row">
-							<span class="filter-row-title">Distância da Universidade</span>
-							<ul class="filter-button-group">
-								<li class="filter-button ape"></li>
-								<li class="filter-button bike un"></li>
-								<li class="filter-button car un"></li>
-							</ul>
-							<input id="distance-spinner" name="distance" />
+						<div class="filter-row" style="margin-top: 7px">
+							<span class="filter-row-title">Tempo (min)</span>
+							<div class="filter-radio-group" style="margin-bottom: 7px;">
+							    <input type="radio" name="distance" value="0"> A pé
+								<br><input type="radio" name="distance" value="1" checked> Bike
+								<br><input type="radio" name="distance" value="2"> Carro
+								<br><input type="radio" name="distance" value="3"> Ônibus
+  							</div>
+  							<input id="distance-spinner" name="distance" /> minutos
 						</div>
 					
 					</div>

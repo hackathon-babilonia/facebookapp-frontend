@@ -435,7 +435,7 @@ ul, ol
 
 ul li
 {
-	list-style: square inside none;
+	list-style: none;
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 	color: #878787;
@@ -2925,7 +2925,7 @@ ul.tabs li.active, ul.tabs li.active a
 
 .on
 {
-	background-color: #47BD9D;
+	background-color: #47BD9D;ONDE DESEJA MORAR?
 	color: #ffffff;
 	border-bottom: 0px solid #dbdbdb;
 	border-top: 0px solid #dbdbdb;
@@ -3058,6 +3058,12 @@ object, embed, video, iframe
 	visibility: hidden;
 }
 
+#top-content
+{
+	z-index: 9999;
+	background-color: #4BAAD3;
+}
+
 .button_green_image a
 {
 	text-decoration: none;
@@ -3176,9 +3182,10 @@ object, embed, video, iframe
 
 #map
 {
+	z-index: 0;
 	display: inline-block;
 	width: 100%;
-	height: 450px;
+	height: 480px;
 	padding-bottom: 25px;
 }
 

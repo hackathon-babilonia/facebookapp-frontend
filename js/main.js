@@ -1,6 +1,6 @@
-var config = 
+var server = 
 {
-	backend: "http://ec2-54-235-228-194.compute-1.amazonaws.com:8080/homin"
+	url: "http://ec2-54-235-228-194.compute-1.amazonaws.com:8080"
 };
 
 var user = 
@@ -48,6 +48,8 @@ var flow =
 						}
 					});
 					
+					// Perform login
+					
 					// Prepare, initialize and load map
 					map.loadMap();
 					
@@ -69,11 +71,58 @@ $("[data-action = 'fb-login']").click(function()
 	
 	flow.login(function()
 	{
+		$(".topmenuwrapper").show();
 		$("[data-action = 'status-msg']").html("Procurando vagas...");
-		$("[data-action = 'search-filters']").fadeIn("slow");
 		$("[data-action = 'loading']").hide();
 	});
 });
 
 
 // Search filters jQuery UI bindings
+$(function()
+{
+	// ----- PRICE ------//
+	$("#price-range").slider(
+	{
+		range : true,
+		min : 0,
+		max : 2000,
+		values : [300, 800],
+		slide : function(event, ui)
+		{
+			$("#price-amount").html("R$" + ui.values[0] + " - R$" + ui.values[1]);
+		}
+
+	});
+	$("#price-amount").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
+	
+	// ------ DISTANCE -----//
+	var distance_spinner = $( "#distance-spinner" ).spinner
+	({
+		min: 5,
+		max: 120,
+		step: 5,
+		numberFormat: "n"
+	}).spinner( "value", 15 );
+}); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
