@@ -79,6 +79,13 @@ var flow =
     			});
 			}
 		});
+	},
+	showCreateForm: function()
+	{
+		$("[data-action = 'search-filters']").fadeOut("slow", function()
+		{
+			$("#new-room").fadeIn("slow");
+		});
 	}
 };
 
@@ -98,6 +105,10 @@ $("[data-action = 'fb-login']").click(function()
 	});
 });
 
+$("[data-action='new-room']").click(function()
+{
+	flow.showCreateForm();
+});
 
 // Search filters jQuery UI bindings
 $(function()

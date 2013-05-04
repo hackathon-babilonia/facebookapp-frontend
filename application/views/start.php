@@ -15,6 +15,7 @@
 
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
 		<link href="css/filters.css" rel="stylesheet" type="text/css" />
+		<link href="css/room.css" rel="stylesheet" type="text/css" />
 		<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 		
 		<link href="css/cupertino/jquery-ui-1.10.3.custom.css" rel="stylesheet">
@@ -132,19 +133,19 @@
 							<ul class="sf-menu">
 
 								<li>
-									<a href="/">Início</a>
+									<a href="javascript:void(0);">Início</a>
 								</li>
 
 								<li>
-									<a href="">Publicar Vaga</a>
+									<a href="javascript:void(0);" data-action="new-room">Publicar Vaga</a>
 								</li>
 
 								<li>
-									<a href="">Minha Conta</a>
+									<a href="javascript:void(0);">Minha Conta</a>
 								</li>
 
 								<li>
-									<a href="">Sair</a>
+									<a href="http://facebook.com">Sair</a>
 								</li>
 
 							</ul>
@@ -218,31 +219,32 @@
 					</div>
 					
 					<div id="new-room" style="display: none" data-action="new-room">
+					
+						<span class="filter-title">New room</span>
 
 						<div class="form-row">
-							<span class="filter-row-title"New room</span>
+							<span class="filter-row-title"></span>
 							</div>
 							<div id="form-cadastro">
 							<div class="filter-row">
-							<span class="filter-row-title">Address</span>
 							<label>Name: </label>
-							<input type="text" id="nome" />
+							<input type="text" id="nome" style="width: 230px"/>
 							<br />
 							<label>Address: </label>
-							<input type="text" id="endereco" />
+							<input type="text" id="endereco" style="width: 230px"/>
 							<br />
 							<label>Number: </label>
-							<input type="text" id="numero" />
+							<input type="text" id="numero" style="width: 230px"/>
 							<br />
 							<label>Neighborhood: </label>
-							<input id="bairro" />
+							<input id="bairro" style="width: 230px"/>
 							<br />
 							<br />
 							<label>City: </label>
-							<input id="cidade" />
+							<input id="cidade" style="width: 230px"/>
 							<br />
 							<label>State: </label>
-							<input id="estado" />
+							<input id="estado" style="width: 230px"/>
 							<br />
 						</div>
 
@@ -276,12 +278,12 @@
 						<input type="hidden" name="longitude" />
 
 						<input type="button" onclick="cadastrarVaga()">
-					</div>
+						</div>
 
-					</div>
+						</div>
 
-					<div id="map" style="display: none"></div>
-					
+						<div id="map" style="display: none"></div>
+
 					<!-- Start of clear fix --><div class="clear"></div>
 
 				</section><!-- End of slider wrapper -->

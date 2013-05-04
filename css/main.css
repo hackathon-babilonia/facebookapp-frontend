@@ -3165,7 +3165,7 @@ object, embed, video, iframe
 	font-weight: 500;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
-	padding: 10px 15px 10px 15px;
+	padding: 10px 15px 10px 10px;
 	margin: 15px;
 }
 
