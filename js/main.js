@@ -86,6 +86,64 @@ var flow =
 		{
 			$("#new-room").fadeIn("slow");
 		});
+	},
+	submitLocalForm: function(){
+		$.ajax({
+			url : server.url + "/local/createLocal/save?callback=?",
+			data :
+			{
+				access_token: access_token,
+				nome: $("#nome").val(),
+				endereco: $("#endereco").val(),
+				numero: $("#numero").val(),
+				bairro: $("#bairro").val(),
+				complemento : null,
+				cidade : $("#cidade").val(),
+				estado: $("#estado").val(),
+				tipo : $("input[name=tipo]:checked").val(),
+				genero : $("input[name=sexo]:checked").val()
+			},
+			dataType : "jsonp",
+			success: function(data)
+			{
+				if (data.result == "SUCCESS")
+				{
+					alert("INSERIU!!!!!");
+					flow.showVagaForm();
+				}
+				else
+				{
+					alert("Ooops, algo deu errado com a inserção! Atualize a página e tente de novo");
+					document.location.reload();
+				}
+			}
+		});
+	},
+	submitVagaForm: function(){
+		$.ajax({
+			url : server.url + "/vagas/createVaga/save?callback=?",
+			data :
+			{
+				access_token: access_token,
+				descricao: $.("#nome").val(),
+				preco: $.("#endereco").val(),
+				localId: $.("#numero").val()
+			},
+			dataType : "jsonp",
+			success: function(data)
+			{
+				if (data.result == "SUCCESS")
+				{
+					alert("INSERIU!!!!!");
+					flow.showFilterForm();
+				}
+				else
+				{
+					alert("Ooops, algo deu errado com a inserção! Atualize a página e tente de novo");
+					document.location.reload();
+				}
+			}
+		});
 	}
 };
 
