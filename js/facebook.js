@@ -60,19 +60,30 @@ var facebook =
 			}
 		});
 	},
-	recomendarVaga: function()
+	recomendarVaga: function(vagaId)
 	{
-		function sendRequestViaMultiFriendSelector()
+		FB.ui(
 		{
-			FB.ui(
+			method : 'apprequests',
+			message : 'Recomende essa vaga!'
+		}, function(r)
+		{
+			var reqId = r.request;
+			var reqTo = r.to.toString();
+			$.ajax(
 			{
-				method : 'apprequests',
-				message : 'Recomende essa vaga!'
-			}, function(r)
-			{
-				console.log(r);
+				url : "http://ec2-54-235-228-194.compute-1.amazonaws.com:8080/vagas/recomendar",
+				data :
+				{
+					idVaga : vagaId,
+					idRequest : reqId,
+					to : reqTo
+				},
+				dataType : "text"
 			});
-		}
+
+		});
 
 	}
+
 }

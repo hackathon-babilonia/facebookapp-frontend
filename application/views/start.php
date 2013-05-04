@@ -216,6 +216,69 @@
 						</div>
 					
 					</div>
+					
+					<div id="new-room" style="display: none" data-action="new-room">
+
+						<div class="form-row">
+							<span class="filter-row-title"New room</span>
+							</div>
+							<div id="form-cadastro">
+							<div class="filter-row">
+							<span class="filter-row-title">Address</span>
+							<label>Name: </label>
+							<input type="text" id="nome" />
+							<br />
+							<label>Address: </label>
+							<input type="text" id="endereco" />
+							<br />
+							<label>Number: </label>
+							<input type="text" id="numero" />
+							<br />
+							<label>Neighborhood: </label>
+							<input id="bairro" />
+							<br />
+							<br />
+							<label>City: </label>
+							<input id="cidade" />
+							<br />
+							<label>State: </label>
+							<input id="estado" />
+							<br />
+						</div>
+
+						<div class="filter-row">
+							<span class="filter-row-title">Room Type</span>
+							<input type="radio" name="sexo" value="m" />
+							<label>Male: </label>
+							<br />
+							<input type="radio" name="sexo" value="f" />
+							<label>Female: </label>
+							<br />
+							<input type="radio" name="sexo" value="mf" />
+							<label>Both: </label>
+							<br />
+							<br />
+						</div>
+
+						<div class="filter-row">
+							<span class="filter-row-title">Home Type</span>
+							<input type="radio" name="tipo" value="0" />
+							<label>Fraternity: </label>
+							<br />
+							<input type="radio" name="tipo" value="1" />
+							<label>Boarding House: </label>
+							<br />
+							<input type="radio" name="tipo" value="2" />
+							<label>Flat: </label>
+							<br />
+						</div>
+						<input type="hidden" name="latitude" />
+						<input type="hidden" name="longitude" />
+
+						<input type="button" onclick="cadastrarVaga()">
+					</div>
+
+					</div>
 
 					<div id="map" style="display: none"></div>
 					
