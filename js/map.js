@@ -6,6 +6,7 @@ var map =
 	markers: [],
 	places:[],
 	infoMarkers : [],
+	infoPlaces : [],
 	loadMap: function(callback)
 	{
 		//hide landing
@@ -56,34 +57,31 @@ var map =
 						} else if(data[i].tipo == 5) {
 							tIcon = '/img/markers/university.png';
 						}
-						/*map.places.push(new google.maps.Marker
-						({
-							position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
-							map: map._obj,
-							title: data[i].nome, 
-							icon: tIcon
-						}));*/
 						
 						
+//						var plc = new google.maps.Marker
+//						({
+//							position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
+//							map: map._obj,
+//							title: data[i].nome, 
+//							icon: tIcon
+//						});
+//						map.places.push(plc);
+//						
+//						var infoWindow = new google.maps.InfoWindow({
+//          					content: 'teste'+i
+//      					});
+//      					
+//          				map.infoPlaces.push(infoWindow);
+//          				
+//          				 google.maps.event.addListener(plc, 'click', function() {
+////          				 	map.infoPlaces[i].setZIndex(++infowindowLevel);
+//				            map.infoPlaces[i].open(map._obj,plc);
+//         				  });
 						
-						var plc = new google.maps.Marker
-						({
-							position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
-							map: map._obj,
-							title: data[i].nome, 
-							icon: tIcon
-						});
-						map.places.push(plc);
+						createPlace(data[i], tIcon, map);
 						
-						var infoWindow = new google.maps.InfoWindow({
-          					content: 'teste'+i
-      					});
-      					
-          				map.infoMarkers.push(infoWindow);
-          				 google.maps.event.addListener(plc, 'click', function() {
-          				 	map.infoMarkers[i].setZIndex(++infowindowLevel);
-				            map.infoMarkers[i].open(map._obj,plc);
-         				  });
+						
 					}
 					
 					// callback
@@ -167,22 +165,23 @@ var map =
 						} else if(data[i].tipo == 2) {
 							tIcon = '/img/markers/pensao.png';
 						}
-						var marker = new google.maps.Marker
-						({
-							position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
-							map: map._obj,
-							title: data[i].nome + " ("+data[i].vagas.length+" vagas)", 
-							icon: tIcon
-						});
-						map.markers.push(marker);
-						var infowindow = new google.maps.InfoWindow({
-              				content: 'teste'+i
-          				});
-          				 google.maps.event.addListener(marker, 'click', function() {
-				           	infowindow.setZIndex(++infowindowLevel);
-				            infowindow.open(map._obj,marker);
-         				  });
-          				
+						
+//						var marker = new google.maps.Marker
+//						({
+//							position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
+//							map: map._obj,
+//							title: data[i].nome + " ("+data[i].vagas.length+" vagas)", 
+//							icon: tIcon
+//						});
+//						map.markers.push(marker);
+//						var infowindow = new google.maps.InfoWindow({
+//              				content: 'teste'+i
+//          				});
+//          				 google.maps.event.addListener(marker, 'click', function() {
+//				           	infowindow.setZIndex(++infowindowLevel);
+//				            infowindow.open(map._obj,marker);
+//         				  });
+					createMarker(data[i], tIcon, map);	
 
 					}
 					
@@ -213,4 +212,49 @@ var map =
 
 		});
 	}
+}
+
+function createPlace(data, tIcon, map) {
+	var plc = new google.maps.Marker
+	({
+		position: new google.maps.LatLng(data.latitude, data.longitude),
+		map: map._obj,
+		title: data.nome, 
+		icon: tIcon
+	});
+	map.places.push(plc);
+	
+	
+	 google.maps.event.addListener(plc, 'click', function() {
+		 $.ajax(
+				{
+					url : server.url + "/place/infowindow?callback=?",
+					data :
+					{
+						id: data.id
+					},
+					dataType : "jsonp",
+					success: function(data)
+					{
+						$('#infoWindow').html(data);
+					}
+				}); 
+		 
+	  });
+}
+
+function createMarker(data, tIcon, map) {
+	var plc = new google.maps.Marker
+	({
+		position: new google.maps.LatLng(data.latitude, data.longitude),
+		map: map._obj,
+		title: data.nome, 
+		icon: tIcon
+	});
+	map.markers.push(plc);
+	
+	
+	
+	 google.maps.event.addListener(plc, 'click', function() {
+	  });
 }
