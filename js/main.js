@@ -107,6 +107,8 @@ var flow =
 				complemento : null,
 				cidade : $("#cidade").val(),
 				estado: $("#estado").val(),
+				descricao: $.("#nome").val(),
+				preco: $.("#endereco").val(),
 				tipo : $("input[name=tipo]:checked").val(),
 				genero : $("input[name=sexo]:checked").val()
 			},
